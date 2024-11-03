@@ -14,7 +14,7 @@ const SearchBar = ({ handleSearchSubmit, searchText, setSearchText }) => {
       handleSearchSubmit(localSearchText);
       toast.success("Successfully searched!");
     }
-    // setLocalSearchText("");
+    
   };
 
   return (

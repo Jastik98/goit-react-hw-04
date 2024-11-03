@@ -1,11 +1,9 @@
 import Modal from "react-modal";
-import css from "./ImageModal.module.css"
+import css from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
 const ImageModal = ({ isOpen, onClose, imageUrl }) => {
-
-
   return (
     <Modal
       isOpen={isOpen}
@@ -17,16 +15,17 @@ const ImageModal = ({ isOpen, onClose, imageUrl }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          zIndex: "600"
+          zIndex: "600",
         },
         content: {
           border: "none",
           padding: "0",
-          maxWidth: "800px",
+          maxWidth: "600px",
           margin: "auto",
           inset: "auto",
-          borderRadius: "0",
+          borderRadius: "10px",
           backgroundColor: "transparent",
+          objectFit: "cover",
         },
       }}
     >

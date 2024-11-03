@@ -1,10 +1,9 @@
 import css from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({  currentPage, setNextPage }) => {
+const LoadMoreBtn = ({ currentPage, setNextPage }) => {
   const changePage = () => {
     const nextPage = currentPage + 1;
     setNextPage(nextPage);
-    console.log("nextPage", nextPage);
   };
 
   return (

@@ -19,7 +19,6 @@ function App() {
 
   const handleSearchSubmit = (querty) => {
     setSearchText(querty), setPage(1), setImages(null);
-    console.log("eqweq:", querty);
   };
   const openModal = (imageUrl) => {
     setSelectedImage(imageUrl);
@@ -32,7 +31,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("searchText", searchText);
     if (!searchText.trim()) return;
 
     async function loadPhotos() {
@@ -54,12 +52,6 @@ function App() {
     loadPhotos();
   }, [searchText, page]);
 
-  const LoadMorePhotos = () => {
-    const nextPage = page + 1;
-    setPage(nextPage);
-    console.log("page", page);
-  };
-
   return (
     <div>
       <SearchBar
@@ -76,7 +68,9 @@ function App() {
           <Loader />
         </div>
       )}
-      {images !== null && !loader && <LoadMoreBtn currentPage={page} setNextPage={setPage} />}
+      {images !== null && !loader && (
+        <LoadMoreBtn currentPage={page} setNextPage={setPage} />
+      )}
       <ImageModal
         isOpen={modalIsOpen}
         onClose={closeModal}
