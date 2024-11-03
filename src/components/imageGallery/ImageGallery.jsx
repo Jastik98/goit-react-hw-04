@@ -1,4 +1,4 @@
-import ImageCard from "../imageCard/imageCard";
+import ImageCard from "../imageCard/ImageCard";
 import css from "./ImageGallery.module.css"
 
 const ImageGallery = ({ images, onImagesClick }) => {
