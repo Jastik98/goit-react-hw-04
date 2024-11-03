@@ -1,19 +1,21 @@
 .btn {
-  display: flex;
-  cursor: pointer;
-  border-radius: 2px;
-  padding: 8px;
-  width: 100px;
-  height: 30px;
-  background-color: #fafafa;
-  border: 1px solid rgb(2, 2, 2);
-  font-weight: 450;
-  font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  justify-content: center;
-  align-items: center;
-  color: rgb(2, 2, 2);
-  margin: auto;
-  margin-top: 6px;
+  display: block;
+  font-style: normal;
+  font-size: 20px;
+  background:  rgb(40, 67, 91);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  padding: 10px 10px;
+
+    box-shadow: 0 5px 15px 0  rgb(40, 67, 91);
+  transition: 0.5s;
+  margin: 10px auto;
+}
+
+.btn:hover {
+  transform: translate(0,-3px);
+  box-shadow: 0 20px 40px 0  rgb(40, 67, 91);
 }

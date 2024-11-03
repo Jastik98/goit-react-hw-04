@@ -17,6 +17,7 @@ const ImageModal = ({ isOpen, onClose, imageUrl }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          zIndex: "600"
         },
         content: {
           border: "none",

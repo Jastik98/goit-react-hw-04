@@ -1,0 +1,14 @@
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  gap: 16px;
+  position: relative;
+  margin: 0px 10px;
+  z-index: 500;
+}
+.imgWrapper {
+  width: calc((100% - 32px) / 3);
+}

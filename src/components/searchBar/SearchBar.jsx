@@ -1,31 +1,36 @@
 import toast, { Toaster } from "react-hot-toast";
 import { IoMdSearch } from "react-icons/io";
+import { useState } from "react";
+import css from "./SearchBar.module.css";
 
-const SearchBar = ({ onSubmit, searchText, setSearchText }) => {
+const SearchBar = ({ handleSearchSubmit, searchText, setSearchText }) => {
+  const [localSearchText, setLocalSearchText] = useState("");
   const handleSubmit = (eventSubmit) => {
     eventSubmit.preventDefault();
-    if (!searchText.trim()) {
+    if (!localSearchText.trim()) {
       toast.error("Search term can`t be empty!");
       return;
     } else {
+      handleSearchSubmit(localSearchText);
       toast.success("Successfully searched!");
     }
-    onSubmit(searchText);
-    setSearchText("");
+    // setLocalSearchText("");
   };
 
   return (
-    <header>
+    <header className={css.header}>
       <Toaster />
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <input
-          onChange={(e) => setSearchText(e.target.value)}
+          className={css.input}
+          onChange={(e) => setLocalSearchText(e.target.value)}
           type="text"
           autoComplete="off"
+          value={localSearchText}
           autoFocus
           placeholder="Search images and photos"
         />
-        <button type="submit">
+        <button className={css.button} type="submit">
           <IoMdSearch />
         </button>
       </form>
