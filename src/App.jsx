@@ -6,7 +6,7 @@ import LoadMoreBtn from "./components/loadMoreBtn/LoadMoreBtn";
 import Loader from "./components/loader/Loader";
 import ErrorMessage from "./components/errorMessage/ErrorMessage";
 import ImageGallery from "./components/imageGallery/ImageGallery";
-import ImageModal from "./components/imageModal/imageModal";
+import ImageModal from "./components/imageModal/ImageModal";
 
 function App() {
   const [searchText, setSearchText] = useState("");
