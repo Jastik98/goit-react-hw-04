@@ -3,7 +3,7 @@ import css from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ isOpen, onClose, imageUrl }) => {
+const ImageModal = ({ isOpen, onClose, image }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -20,7 +20,7 @@ const ImageModal = ({ isOpen, onClose, imageUrl }) => {
         content: {
           border: "none",
           padding: "0",
-          maxWidth: "600px",
+          maxWidth: "700px",
           margin: "auto",
           inset: "auto",
           borderRadius: "10px",
@@ -29,16 +29,18 @@ const ImageModal = ({ isOpen, onClose, imageUrl }) => {
         },
       }}
     >
-      <img
-        className={css.content}
-        src={imageUrl}
-        alt="Large picture"
-        style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-          objectFit: "contain",
-        }}
-      />
+      {image && (
+        <img
+          className={css.content}
+          src={image.urls.regular}
+          alt={image.alt_description}
+          style={{
+            maxWidth: "90%",
+            maxHeight: "auto",
+            objectFit: "contain",
+          }}
+        />
+      )}
     </Modal>
   );
 };

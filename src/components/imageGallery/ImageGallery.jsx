@@ -5,8 +5,8 @@ const ImageGallery = ({ images, onImagesClick }) => {
   return (
     <div className={css.Wrapper}>
       {images.map((image) => (
-        <div className={css.imgWrapper} key={image.id} onClick={() => onImagesClick(image.urls.regular)}>
-          <ImageCard image={image} />
+        <div className={css.imgWrapper} key={image.id}>
+          <ImageCard image={image} onImagesClick={() => onImagesClick(image)} />
         </div>
       ))}
     </div>

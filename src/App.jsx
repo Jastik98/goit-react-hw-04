@@ -20,10 +20,14 @@ function App() {
   const handleSearchSubmit = (querty) => {
     setSearchText(querty), setPage(1), setImages(null);
   };
-  const openModal = (imageUrl) => {
-    setSelectedImage(imageUrl);
+  const openModal = (image) => {
+    setSelectedImage(image);
     setModalIsOpen(true);
   };
+   const changePage = () => {
+     const nextPage = page + 1;
+     setPage(nextPage);
+   };
 
   const closeModal = () => {
     setSelectedImage(null);
@@ -69,12 +73,12 @@ function App() {
         </div>
       )}
       {images !== null && !loader && (
-        <LoadMoreBtn currentPage={page} setNextPage={setPage} />
+        <LoadMoreBtn changePage={changePage} setNextPage={setPage} />
       )}
       <ImageModal
-        isOpen={modalIsOpen}
+        isOpen={!!selectedImage}
         onClose={closeModal}
-        imageUrl={selectedImage}
+        image={selectedImage}
       />
     </div>
   );
