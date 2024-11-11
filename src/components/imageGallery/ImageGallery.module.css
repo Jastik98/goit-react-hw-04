@@ -6,8 +6,9 @@
   row-gap: 16px;
   gap: 16px;
   position: relative;
-  margin: 0px 10px ;
+  margin: 0px 10px;
   z-index: 500;
+  list-style: none;
 }
 .imgWrapper {
   width: calc((100% - 52px) / 3);

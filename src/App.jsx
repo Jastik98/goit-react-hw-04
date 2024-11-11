@@ -17,17 +17,20 @@ function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const handleSearchSubmit = (querty) => {
-    setSearchText(querty), setPage(1), setImages(null);
+  const handleSearchSubmit = (query) => {
+    setError(null);
+    setSearchText(query);
+    setPage(1);
+    setImages(null);
   };
   const openModal = (image) => {
     setSelectedImage(image);
     setModalIsOpen(true);
   };
-   const changePage = () => {
-     const nextPage = page + 1;
-     setPage(nextPage);
-   };
+  const changePage = () => {
+    const nextPage = page + 1;
+    setPage(nextPage);
+  };
 
   const closeModal = () => {
     setSelectedImage(null);

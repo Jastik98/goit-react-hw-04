@@ -3,7 +3,7 @@ import { IoMdSearch } from "react-icons/io";
 import { useState } from "react";
 import css from "./SearchBar.module.css";
 
-const SearchBar = ({ handleSearchSubmit, searchText, setSearchText }) => {
+const SearchBar = ({ handleSearchSubmit}) => {
   const [localSearchText, setLocalSearchText] = useState("");
   const handleSubmit = (eventSubmit) => {
     eventSubmit.preventDefault();
